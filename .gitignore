@@ -10,7 +10,7 @@
 /test/version_tmp/
 /tmp/
 /metadata/
-open-source-licenses.txt
+.open-source-licenses.txt
 
 # Used by dotenv library to load environment variables.
 # .env
