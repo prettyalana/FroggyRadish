@@ -9,9 +9,9 @@ class Map
       x: 120,
       y: 280,
       w: 100,
-      h: 80,
+      h: 100,
       speed: 12,
-      path: "sprites/char free/char_walk_right.gif",
+      path: "sprites/PIPOYA FREE RPG Character Sprites 32x32/Female/Main Character2.png",
     }
     @args.state.targets = [
       spawn_target, spawn_target, spawn_target,
