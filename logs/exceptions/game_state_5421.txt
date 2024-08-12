@@ -1,0 +1,39 @@
+# * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+# An exception occurred soon after ~$gtk.reset~ was invoked.
+# 
+# Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+# 
+# You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+# 
+# There are a few ways to fix exceptions that fall into this category:
+# 
+# 1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+# with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+# reset on the next frame before invoking your ~tick~ method).
+# 2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+# properties on ~args.state~ that are needed to complete the execution
+# of the rest of your ~tick~ function successfully.
+# 3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+# and ensures it has a consistent/valid state.
+# 
+# Take a look at the following sample apps for insights on how to do this:
+# - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+# - =./samples/99_genre_platformer/shadows/app/main.rb=
+# 
+# ** NOTE:
+# The options above are ordered by quickest to implement (but probably not
+# bulletproof), to more work to implement (but a better design long term).
+# 
+# * EXCEPTION THROWN:
+# ** Failed to load/reload app/controller.rb.
+# line 54:0: syntax error, unexpected end of file, expecting keyword_end
+# 
+# 
+# 
+# ** Backtrace:
+# 
+# * Backtrace ~$gtk.reset~ last invocation:
+# 
+
+Game State:
+{:state=>{:entity_id=>3, :tick_count=>5421, :player=>{:x=>0, :y=>508, :w=>100, :h=>80, :speed=>12, :path=>"sprites/char free/char_walk_right.gif"}, :targets=>[{:x=>1091.0, :y=>70, :w=>64, :h=>64, :path=>"sprites/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/ChargeAttackPreview copy.png"}, {:x=>1271.0, :y=>79, :w=>64, :h=>64, :path=>"sprites/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/ChargeAttackPreview copy.png"}, {:x=>783.0, :y=>643, :w=>64, :h=>64, :path=>"sprites/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/ChargeAttackPreview copy.png"}], :fireballs=>[], :score=>19, :timer=>-3622, :game=>#<Game:0x7fd4591a2990 @map=#<Map:0x7fd4591a1820>, @controller=#<Controller:0x7fd45919f090>, @args=#<GTK::Args:0x7fd45919b670>>}, :temp_state=>{}, :inputs=>{:controller_one=>{:left_analog_x_raw=>0, :left_analog_y_raw=>0, :left_analog_x_perc=>0.0, :left_analog_y_perc=>0.0, :right_analog_x_raw=>0, :right_analog_y_raw=>0, :right_analog_x_perc=>0.0, :right_analog_y_perc=>0.0, :active=>false, :key_down=>{}, :key_held=>{}, :key_up=>{}, :left_analog_angle=>nil, :right_analog_angle=>nil, :left_analog_active=>false, :right_analog_active=>false}, :controller_two=>{:left_analog_x_raw=>0, :left_analog_y_raw=>0, :left_analog_x_perc=>0.0, :left_analog_y_perc=>0.0, :right_analog_x_raw=>0, :right_analog_y_raw=>0, :right_analog_x_perc=>0.0, :right_analog_y_perc=>0.0, :active=>false, :key_down=>{}, :key_held=>{}, :key_up=>{}, :left_analog_angle=>nil, :right_analog_angle=>nil, :left_analog_active=>false, :right_analog_active=>false}, :controller_three=>{:left_analog_x_raw=>0, :left_analog_y_raw=>0, :left_analog_x_perc=>0.0, :left_analog_y_perc=>0.0, :right_analog_x_raw=>0, :right_analog_y_raw=>0, :right_analog_x_perc=>0.0, :right_analog_y_perc=>0.0, :active=>false, :key_down=>{}, :key_held=>{}, :key_up=>{}, :left_analog_angle=>nil, :right_analog_angle=>nil, :left_analog_active=>false, :right_analog_active=>false}, :controller_four=>{:left_analog_x_raw=>0, :left_analog_y_raw=>0, :left_analog_x_perc=>0.0, :left_analog_y_perc=>0.0, :right_analog_x_raw=>0, :right_analog_y_raw=>0, :right_analog_x_perc=>0.0, :right_analog_y_perc=>0.0, :active=>false, :key_down=>{}, :key_held=>{}, :key_up=>{}, :left_analog_angle=>nil, :right_analog_angle=>nil, :left_analog_active=>false, :right_analog_active=>false}, :keyboard=>{:key_up=>{:keycodes=>[], :truthy_keys=>[]}, :key_held=>{:keycodes=>[], :truthy_keys=>[]}, :key_down=>{:keycodes=>[], :truthy_keys=>[]}, :has_focus=>false}, :mouse=>{:x=>4.0, :y=>720.0, :moved=>nil, :moved_at=>1807, :has_focus=>false}, :text=>[], :application_control=>"nil"}, :passes=>[{:solids=>[], :sprites=>[], :lines=>[], :labels=>[{:x=>40, :y=>680, :text=>"Game Over!", :size_enum=>10}, {:x=>40, :y=>630, :text=>"Score: 19", :size_enum=>4}, {:x=>40, :y=>588, :text=>"Fire to restart", :size_enum=>2}], :sounds=>[], :borders=>[], :primitives=>[], :static_solids=>[], :static_borders=>[], :static_sprites=>[], :static_lines=>[], :static_labels=>[], :static_primitives=>[]}], :outputs=>{:solids=>[], :sprites=>[], :lines=>[], :labels=>[{:x=>40, :y=>680, :text=>"Game Over!", :size_enum=>10}, {:x=>40, :y=>630, :text=>"Score: 19", :size_enum=>4}, {:x=>40, :y=>588, :text=>"Fire to restart", :size_enum=>2}], :sounds=>[], :borders=>[], :primitives=>[], :static_solids=>[], :static_borders=>[], :static_sprites=>[], :static_lines=>[], :static_labels=>[], :static_primitives=>[]}, :grid=>{:allscreen_bottom_px=>0, :origin_x=>0.0, :allscreen_offset_x=>0, :w_px=>1280, :ffi_draw=>"", :allscreen_h_pt=>720, :origin_name=>:bottom_left, :allscreen_left_px=>0, :allscreen_w_pt=>1280, :origin_y=>720, :allscreen_top_px=>720, :allscreen_bottom=>0, :allscreen_w_px=>1280, :right_px=>1280, :left=>0, :allscreen_offset_y_px=>0, :allscreen_h=>720, :right=>1280, :texture_scale=>1.0, :top=>720, :allscreen_offset_x_px=>0, :allscreen_w=>1280, :bottom=>0, :allscreen_offset_y=>0, :top_px=>720, :h_px=>720, :center_x=>640.0, :y=>0.0, :allscreen_right=>1280, :h=>720, :center_y=>360.0, :texture_scale_enum=>100, :allscreen_top=>720, :rect=>[[:x, 0.0], [:y, 0.0], [:w, 1280], [:h, 720]], :x=>0.0, :allscreen_right_px=>1280, :w=>1280, :center=>[[:x, 640.0], [:y, 360.0]], :left_px=>0, :allscreen_h_px=>720, :runtime=>{:argv=>"/Users/alana/alana-fullstackdev/dragonruby-macos/mygame/app/dragonruby", :platform=>"Mac OS X", :required_files=>["app/main.rb", "app/map.rb", "app/controller.rb"], :reload_list_history=>{"app/main.rb"=>{:current=>{:path=>"app/main.rb", :global_at=>-1, :event=>:reload_completed}, :history=>[{:path=>"app/main.rb", :global_at=>-1, :event=>:reload_queued}, {:path=>"app/main.rb", :global_at=>-1, :event=>:processing}, {:path=>"app/main.rb", :global_at=>-1, :event=>:reload_completed}]}, "app/map.rb"=>{:current=>{:path=>"app/map.rb", :global_at=>-1, :event=>:reload_completed}, :history=>[{:path=>"app/map.rb", :global_at=>-1, :event=>:reload_queued}, {:path=>"app/map.rb", :global_at=>-1, :event=>:processing}, {:path=>"app/map.rb", :global_at=>-1, :event=>:reload_completed}]}, "app/controller.rb"=>{:current=>{:path=>"app/controller.rb", :global_at=>-1, :event=>:reload_completed}, :history=>[{:path=>"app/controller.rb", :global_at=>-1, :event=>:reload_queued}, {:path=>"app/controller.rb", :global_at=>-1, :event=>:processing}, {:path=>"app/controller.rb", :global_at=>-1, :event=>:reload_completed}]}}}, :allscreen_left=>0, :bottom_px=>0}}
