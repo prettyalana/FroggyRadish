@@ -35,7 +35,7 @@
 - 000000 [Render] Max texture size: 16384x16384 (system reported 16384x16384)
 - 000000 [Render] Logical render size: 1280x720
 - 000000 [Render] Native render size: 1280x720
-? 000000 [Engine] RNG seed has been set to 1723318196.
+? 000000 [Engine] RNG seed has been set to 1723430139.
 - 000000 [Engine] Janitor is using 4 threads.
 # 000000 [Engine] * WARNING: File path contains problematic characters.
   To ensure cross-platform support, it is STRONGLY recommended
@@ -53,7 +53,7 @@
     =sprites/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/ChargeAttackPreview copy.png=
   to
     =sprites/ninja-adventure---asset-pack/actor/boss/giantfrog/chargeattackpreview-copy.png=
-# 000007 [Engine] * WARNING: File path contains problematic characters.
+# 000004 [Engine] * WARNING: File path contains problematic characters.
   To ensure cross-platform support, it is STRONGLY recommended
   that file names be all lowercase with no spaces.
 
@@ -61,10 +61,4 @@
     =sprites/Ninja Adventure - Asset Pack/Items/Food/SeedBig2.png=
   to
     =sprites/ninja-adventure---asset-pack/items/food/seedbig2.png=
-? 000031 [Engine] ~reset~ has been invoked (1812).
-? 000031 [Engine] RNG seed has been set to 1723318196.
-? 000125 [Engine] ~reset~ has been invoked (7468).
-? 000125 [Engine] RNG seed has been set to 1723318196.
-? 002835 [Engine] ~reset~ has been invoked (170090).
-? 002835 [Engine] RNG seed has been set to 1723318196.
-* 006386 [Engine] Logging shutting down
+* 000016 [Engine] Logging shutting down
